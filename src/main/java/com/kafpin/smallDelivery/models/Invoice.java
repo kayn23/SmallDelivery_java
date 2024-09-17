@@ -28,7 +28,8 @@ public class Invoice {
     @JoinColumn(name="recipient_id")
     private User recipient;
 
-    @ManyToOne
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Status status;
 
     @OneToMany(mappedBy = "invoice")

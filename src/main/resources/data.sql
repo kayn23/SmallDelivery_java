@@ -1,11 +1,3 @@
-INSERT INTO `statuses` (`id`, `name`) VALUES
-(1,	'new'),
-(2,	'payment'),
-(3,	'paid'),
-(4,	'delivers'),
-(5,	'received'),
-(6,	'end');
-
 INSERT INTO `cities` (`id`, `name`) VALUES
 (1,	'Москва'),
 (2,	'Абрамцево'),
@@ -2513,14 +2505,14 @@ INSERT INTO `cities` (`id`, `name`) VALUES
 (2504,	'Углич'),
 (2505,	'Ярославль');
 
-INSERT INTO `stocks` (`id`, `name`, `address`, `city_id`, `deleted`) VALUES
-(1,	'Пункт выдачи заказов',	'Ул. Чайковского д. 48',	501,	0),
-(2,	'Пункт выдачи \"Озон\"',	'ул. Чайковского д. 8',	501,	1),
-(3,	'Пункт выдачи озон',	'ул. Пионерская, 8',	516,	0);
+INSERT INTO `stocks` ( `name`, `address`, `city_id`, `deleted`) VALUES
+('Пункт выдачи заказов',	'Ул. Чайковского д. 48',	501,	0),
+('Пункт выдачи \"Озон\"',	'ул. Чайковского д. 8',	501,	1),
+('Пункт выдачи озон',	'ул. Пионерская, 8',	516,	0);
 
-INSERT INTO `users` (`id`, `name`, `surname`, `lastname`, `email`, `role`, `password`) VALUES
-(1,	'Чернышев',	'Анатолий',	'Евгеньевич',	'kayn23@yandex.ru',	'ROLE_ADMIN',	'232111'),
-(5,	'Александр2',	'Федорович',	'Петров',	'alex2@gmail.com',	'ROLE_USER',	'123456');
+INSERT INTO `users` ( `name`, `surname`, `lastname`, `email`, `role`, `password`) VALUES
+('Чернышев',	'Анатолий',	'Евгеньевич',	'kayn23@yandex.ru',	'ROLE_ADMIN',	'$2a$10$7NABtq.D4blSqgsnqqmiQ.FdT3Sco/pSGZqx4gbzZa5Eriv1/iUKK'),
+('Александр2',	'Федорович',	'Петров',	'alex2@gmail.com',	'ROLE_USER',	'$2a$10$7NABtq.D4blSqgsnqqmiQ.FdT3Sco/pSGZqx4gbzZa5Eriv1/iUKK');
 
 
 

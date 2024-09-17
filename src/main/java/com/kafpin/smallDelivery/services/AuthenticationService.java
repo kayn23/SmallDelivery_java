@@ -2,6 +2,7 @@ package com.kafpin.smallDelivery.services;
 
 import com.kafpin.smallDelivery.dto.auth.JwtAuthenticationResponse;
 import com.kafpin.smallDelivery.dto.auth.SignInRequest;
+import com.kafpin.smallDelivery.dto.auth.SignUpRequest;
 import com.kafpin.smallDelivery.models.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,10 +19,13 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
 
-    public JwtAuthenticationResponse signUp(SignInRequest request) {
+    public JwtAuthenticationResponse signUp(SignUpRequest request) {
         var user = User.builder()
+                .name(request.getName())
+                .surname(request.getSurname())
+                .lastname(request.getLastname())
                 .email(request.getEmail())
-                .password(request.getPassword())
+                .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.ROLE_USER).build();
         userService.create(user);
         var jwt = jwtService.generateToken(user);
