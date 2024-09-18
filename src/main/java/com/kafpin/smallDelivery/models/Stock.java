@@ -1,15 +1,16 @@
 package com.kafpin.smallDelivery.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Table(name="stocks")
 @Data
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Stock {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

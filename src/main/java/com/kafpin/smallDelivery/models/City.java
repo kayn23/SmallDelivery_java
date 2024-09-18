@@ -15,6 +15,7 @@ public class City {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String name;
     @OneToMany(mappedBy = "city")
     private List<Stock> stocks;

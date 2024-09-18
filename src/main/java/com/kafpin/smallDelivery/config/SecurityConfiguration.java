@@ -49,6 +49,8 @@ public class SecurityConfiguration {
                         // Можно указать конкретный путь, * - 1 уровень вложенности, ** - любое количество уровней вложенности
                         .requestMatchers(toH2Console()).permitAll()
                         .requestMatchers("/").permitAll()
+                        .requestMatchers("/api/cities").permitAll()
+                        .requestMatchers("/api/stocks").permitAll()
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers("/swagger-ui/**", "/swagger-resources/*", "/v3/api-docs/**").permitAll()
